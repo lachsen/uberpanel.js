@@ -1,0 +1,73 @@
+/**
+ * Basic Layout
+ */
+
+
+.dkplContainer{
+    font-family: 'Helevtica Neue',Helvetica,Arial,sans-serif;
+}
+.dkplRight .dkplVerticalBar, .dkplLeft li.dkplPanel{
+    left: 0;
+}
+.dkplLeft .dkplVerticalBar, .dkplRight li.dkplPanel{
+    right: 0;
+}
+
+.dkplVerticalBar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.dkplHorizontalBar{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+li.dkplPanel{
+    position: absolute;
+    top: 0;
+}
+
+.dkplLeft li.dkplPanel{
+    left: 0;
+}
+
+.dkplEditor{
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+/**
+ * Size and paddings and colors
+ */
+
+.dkplPanel{
+    padding: 4px 10px 10px 0;
+}
+
+.dkplVerticalBar, .dkplHorizontalBar{
+  border-radius: 3px;
+}
+.dkplVerticalBar{ margin: 8px 0 14px 0; width: 8px;}
+.dkplHorizontalBar{ margin: 0 14px 0 4px; height: 8px;}
+
+.dkplVerticalBar:hover, .dkplHorizontalBar:hover{
+  background-color: #bbbbbb;
+}
+
+.dkplHeader{
+    font-size: 12pt;
+    color: white;
+    background-color: #bbbbbb;
+    padding: 4px 8px;
+}
+.dkplLeft .dkplHeader{ border-radius: 0 12px 0 0;}
+.dkplRight .dkplHeader{ border-radius: 12px 0 0 0;}
+
+.dkplEditor{
+    background: white;
+    padding: 6px;
+}
