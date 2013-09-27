@@ -4,7 +4,6 @@
     <title>Panels Test</title>
 
     <link rel="stylesheet" href="style/dockpanel.css">
-    <script type="text/javascript" src="lib/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="lib/dockpanels.js"></script>
 
     <style type="text/css" >
@@ -16,7 +15,7 @@
 </head>
 <body>
 
-<div data-dockpanel="left" >
+<div data-dockpanel="left" data-horizontal-flow-width="300" >
     <ul>
         <li data-editor="Code Input" data-fix-height>
             This is editor Field 1
@@ -28,6 +27,26 @@
                                                 This is editor Field 2
                                                             This is editor Field 2
                                                                         This is editor Field 2
+        </li>
+        <li data-editor="Custom Options" data-fix-height>
+            This is editor Field 1
+        </li>
+    </ul>
+</div>
+
+
+<div data-dockpanel="right" data-horizontal-flow-width="300">
+    <ul>
+        <li data-editor="Code Output">
+            This is editor Field 2             This is editor Field 2             This is editor Field 2
+                        This is editor Field 2
+                                    This is editor Field 2
+                                                This is editor Field 2
+                                                            This is editor Field 2
+                                                                        This is editor Field 2
+        </li>
+        <li data-editor="Code Input" data-fix-height>
+            This is editor Field 1
         </li>
     </ul>
 </div>
