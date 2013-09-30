@@ -1,0 +1,145 @@
+/**
+ * Basic Layout
+ */
+
+
+.bbplContainer{
+    font-family: 'Helevtica Neue',Helvetica,Arial,sans-serif;
+}
+.bbplRight .bbplVerticalBar, .bbplRight .bbplCornerBar{
+    left: 0;
+}
+.bbplLeft .bbplVerticalBar, .bbplLeft .bbplCornerBar{
+    right: 0;
+}
+
+.bbplVerticalBar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: e-resize;
+}
+.bbplHorizontalBar{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: s-resize;
+}
+.bbplCornerBar{
+    position: absolute;
+    bottom: 0;
+}
+.bbplLeft .bbplCornerBar{
+    cursor: nw-resize;
+}
+.bbplRight .bbplCornerBar{
+    cursor: sw-resize;
+}
+
+
+li.bbplPanel.bbplHorizontalDrag, .bbplPanel.bbplVerticalDrag, .bbplPanel.bbplCornerDrag{
+    z-index: 1;
+}
+
+li.bbplPanel.bbplHorizontalDrag{ cursor: s-resize;}
+li.bbplPanel.bbplVerticalDrag{ cursor: e-resize;}
+li.bbplPanel.bbplCornerDrag{ cursor: nw-resize;}
+
+li.bbplPanel{
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    list-style: none;
+    transition: top 0.2s, left 0.2s, right 0.2s;
+}
+.bbplDragging li.bbplPanel{
+    transition: none;
+}
+li.bbplPanel.bbplPlaceTransition{
+    transition: none;
+}
+
+.bbplLeft li.bbplPanel{
+    left: 0;
+}
+
+.bbplEditor{
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.bbplMinimized .bbplEditor, .bbplMinimized .bbplHorizontalBar, .mimimized .bbplVerticalBar, .mimimized .bbplCornerBar{
+    display: none;
+}
+
+li.bbplPanel.bbplPlacing{
+    opacity: 0.5;
+    z-index: 100;
+}
+
+.bbplHighlight{
+    position: absolute;
+}
+
+
+/**
+ * Size and paddings and colors
+ */
+
+.bbplLeft .bbplPanel{
+    padding: 4px 10px 10px 0;
+}
+.bbplRight .bbplPanel{
+    padding: 4px 0 10px 10px;
+}
+.bbplPanel.bbplMinimized{
+    padding: 3px 5px !important;
+}
+
+.bbplVerticalBar, .bbplHorizontalBar{
+  border-radius: 3px;
+}
+.bbplCornerBar{
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+}
+.bbplVerticalBar{ margin: 8px 0 14px 0; width: 8px;}
+.bbplLeft .bbplHorizontalBar{ margin: 0 14px 0 4px; height: 8px;}
+.bbplRight .bbplHorizontalBar{ margin: 0 4px 0 14px; height: 8px;}
+.bbplCornerBar{ }
+
+.bbplVerticalBar:hover, .bbplHorizontalBar:hover, .bbplCornerBar:hover{
+  background-color: #bbbbbb;
+}
+.bbplVerticalDrag .bbplVerticalBar, .bbplHorizontalDrag .bbplHorizontalBar, .bbplCornerDrag .bbplCornerBar{
+  background-color: #d14;
+}
+
+.bbplHighlight{
+    background-color: #d14;
+    width: 4px;
+    height: 4px;
+}
+.bbplHighlight.bbplVertical{
+    margin-top: 0;
+    margin-left: -2px;
+}
+
+.bbplHeader{
+    font-size: 10pt;
+    padding: 2px 6px;
+    color: white;
+    background-color: #bbbbbb;
+}
+
+.bbplLeft .bbplHeader{ border-radius: 0 12px 0 0;}
+.bbplRight .bbplHeader{ border-radius: 12px 0 0 0;}
+.bbplMinimized .bbplHeader{ border-radius: 12px}
+
+
+.bbplEditor{
+    background: rgba(255,255,255,0.5);
+    padding: 6px;
+}
