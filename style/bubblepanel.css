@@ -69,7 +69,7 @@ li.bbplPanel.bbplPlaceTransition{
     overflow: auto;
 }
 
-.bbplMinimized .bbplEditor, .bbplMinimized .bbplHorizontalBar, .mimimized .bbplVerticalBar, .mimimized .bbplCornerBar{
+.bbplMinimized .bbplEditor, .bbplMinimized .bbplHorizontalBar, .bbplMinimized .bbplVerticalBar, .bbplMinimized .bbplCornerBar{
     display: none;
 }
 
