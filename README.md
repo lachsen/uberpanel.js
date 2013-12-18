@@ -1,4 +1,8 @@
-bubblepanel.js
+uberpanels.js
 ==============
 
-Bubbly panels for HTML based editors
+Fancy panels for HTML based editors.
+
+## How to use
+
+Have a look at the [Minimal Example](http://lachsen.github.io/uberpanel.js/example.html)
