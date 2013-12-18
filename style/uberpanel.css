@@ -1,0 +1,149 @@
+/**
+ * Basic Layout
+ */
+
+
+.ubplContainer{
+    font-family: 'Helevtica Neue',Helvetica,Arial,sans-serif;
+}
+.ubplRight .ubplVerticalBar, .ubplRight .ubplCornerBar{
+    left: 0;
+}
+.ubplLeft .ubplVerticalBar, .ubplLeft .ubplCornerBar{
+    right: 0;
+}
+
+.ubplVerticalBar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: e-resize;
+    z-index: 3;
+}
+.ubplHorizontalBar{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: s-resize;
+    z-index: 1;
+}
+.ubplCornerBar{
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+.ubplLeft .ubplCornerBar{
+    cursor: nw-resize;
+}
+.ubplRight .ubplCornerBar{
+    cursor: sw-resize;
+}
+
+
+li.ubplPanel.ubplHorizontalDrag, .ubplPanel.ubplVerticalDrag, .ubplPanel.ubplCornerDrag{
+    z-index: 2;
+}
+
+li.ubplPanel.ubplHorizontalDrag{ cursor: s-resize;}
+li.ubplPanel.ubplVerticalDrag{ cursor: e-resize;}
+li.ubplPanel.ubplCornerDrag{ cursor: nw-resize;}
+
+li.ubplPanel{
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    list-style: none;
+    transition: top 0.2s, left 0.2s, right 0.2s;
+}
+.ubplDragging li.ubplPanel{
+    transition: none;
+}
+li.ubplPanel.ubplPlaceTransition{
+    transition: none;
+}
+
+.ubplLeft li.ubplPanel{
+    left: 0;
+}
+
+.ubplEditor{
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+}
+
+.ubplMinimized .ubplEditor, .ubplMinimized .ubplHorizontalBar, .ubplMinimized .ubplVerticalBar, .ubplMinimized .ubplCornerBar{
+    display: none;
+}
+
+li.ubplPanel.ubplPlacing{
+    opacity: 0.5;
+    z-index: 100;
+}
+
+.ubplHighlight{
+    position: absolute;
+}
+
+
+/**
+ * Size and paddings and colors
+ */
+
+.ubplLeft .ubplPanel{
+    padding: 4px 10px 10px 0;
+}
+.ubplRight .ubplPanel{
+    padding: 4px 0 10px 10px;
+}
+.ubplPanel.ubplMinimized{
+    padding: 3px 5px !important;
+}
+
+.ubplVerticalBar, .ubplHorizontalBar{
+  border-radius: 3px;
+}
+.ubplCornerBar{
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+}
+.ubplVerticalBar{ margin: 8px 0 14px 0; width: 8px;}
+.ubplLeft .ubplHorizontalBar{ margin: 0 14px 0 4px; height: 8px;}
+.ubplRight .ubplHorizontalBar{ margin: 0 4px 0 14px; height: 8px;}
+.ubplCornerBar{ }
+
+.ubplVerticalBar:hover, .ubplHorizontalBar:hover, .ubplCornerBar:hover{
+  background-color: #bbbbbb;
+}
+.ubplVerticalDrag .ubplVerticalBar, .ubplHorizontalDrag .ubplHorizontalBar, .ubplCornerDrag .ubplCornerBar{
+  background-color: #d14;
+}
+
+.ubplHighlight{
+    background-color: #d14;
+    width: 4px;
+    height: 4px;
+}
+.ubplHighlight.ubplVertical{
+    margin-top: 0;
+    margin-left: -2px;
+}
+
+.ubplHeader{
+    font-size: 10pt;
+    padding: 2px 12px;
+    color: white;
+    background-color: #bbbbbb;
+    box-shadow: 0 0 5px #888;
+}
+
+.ubplEditor{
+    box-shadow: 0 5px 5px #888;
+}
+
+.ubplLeft .ubplHeader{ border-radius: 0 12px 0 0;}
+.ubplRight .ubplHeader{ border-radius: 12px 0 0 0;}
+.ubplMinimized .ubplHeader{ border-radius: 12px}
+

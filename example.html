@@ -3,50 +3,100 @@
 <head>
     <title>Panels Test</title>
 
-    <link rel="stylesheet" href="style/bubblepanel.css">
-    <script type="text/javascript" src="lib/bubblepanel.js"></script>
+    <link rel="stylesheet" href="style/uberpanel.css">
+    <script type="text/javascript" src="lib/uberpanel.js"></script>
 
     <style type="text/css" >
         body{
-            background: #dddddd;
+            background: #aaaaaa;
         }
+        /* Style the headers of the Uberpanels */
+        .ubplHeader{
+            background: #555;
+            color: white;
+        }
+        /* Specify the background color of Uberpanels (otherwise, Uberpanels are transparent) */
+        .ubplEditor{
+            background: rgba(255,255,255,0.8);
+        }
+        .contentBox{
+            padding: 8px;
+            line-height: 150%;
+        }
+
     </style>
 
 </head>
-<body>
+<script>
+    function initUberPanel(){
+        Uberpanels.init({
+            autosave: true // if true: save layout and size of Uberpanels for next visit of webpage (uses localstorage)
+        });
+    }
+</script>
 
-<div data-dockpanel="left" data-horizontal-flow-width="300" >
+<body onload="initUberPanel()">
+
+<div data-ubercontainer="myLeftContainer" data-side="left" data-horizontal-flow-width="300">
     <ul>
-        <li data-editor="Code Input" data-fix-height>
-            This is editor Field 1
+        <li data-uberpanel="Abount content" data-title="About Content" data-default-width="500" data-default-height="120">
+            <div class="contentBox" >
+                You can add arbitrary HTML into each UberPanel.
+                This includes <input type="text" name="yayText" value="Text Input" /> and
+                <input type="button" name="yayButton" value="Buttons" /> and so on.
+            </div>
         </li>
-        <li data-editor="Code Output" data-default-width="500" data-default-height="400">
-            This is editor Field 2             This is editor Field 2             This is editor Field 2
-                        This is editor Field 2
-                                    This is editor Field 2
-                                                This is editor Field 2
-                                                            This is editor Field 2
-                                                                        This is editor Field 2
+        <li data-uberpanel="Resizing" data-title="Free Resizeable Uberpanels" data-default-width="550" data-default-height="250">
+            <div class="contentBox" >
+                <p>
+                    This UberPanel can be <b>resized</b> in both horizontally and vertically. Give it a try!
+                </p>
+                <ul>
+                    <li>You can drag the bar to the right or below to change width or height respectively</li>
+                    <li>You can also drag the lower right corner to change both widht and height and the same time</li>
+                </ul>
+            </div>
         </li>
-        <li data-editor="Custom Options" data-fix-height>
-            This is editor Field 1
+        <li data-uberpanel="FixedHeight" data-title="Fixed Height Uberpanels" data-fix-height data-default-width="400">
+            <div class="contentBox" >
+                This UberPanel has the 'fix-height' property. The user can only change the <b>width</b>.
+                The height of the UberPanel will adapt automatically.
+            </div>
         </li>
     </ul>
 </div>
 
-
-<div data-dockpanel="right" data-horizontal-flow-width="300">
+<div data-ubercontainer="myRightContainer" data-side="right" data-horizontal-flow-width="300">
     <ul>
-        <li data-editor="Code Output">
-            This is editor Field 2             This is editor Field 2             This is editor Field 2
-                        This is editor Field 2
-                                    This is editor Field 2
-                                                This is editor Field 2
-                                                            This is editor Field 2
-                                                                        This is editor Field 2
+        <li data-uberpanel="DisplayAndHide" data-title="Minimize Uberpanels" data-fix-height data-default-width="400">
+            <div class="contentBox" >
+                You can minimize Uberpanels by <b>clicking the title bar</b>.
+                Clicking the title bar again will display the full Uberpanels again.
+            </div>
         </li>
-        <li data-editor="Code Input" data-fix-height>
-            This is editor Field 1
+        <li data-uberpanel="Reorder" data-title="Reorder Uberpanels" data-fix-height data-default-width="400">
+            <div class="contentBox" >
+                You can reorder Uberpanels by pressing the title bar and dragging the panel around.<br>
+                You can even move the panel from the left to the right!
+            </div>
+        </li>
+        <li data-uberpanel="LayoutSaving" data-title="Automatically save the layout of the Uberpanels" data-default-width="400" data-fix-height>
+            <div class="contentBox" >
+                The layout (position and size) of all Uberpanels can be saved into localstorage.<br>
+                When enabling <b>autosave</b>, the layout is saved whenever the user leaves the page.
+                The layout can be saved manually by calling <code>Uberpanels.saveState();</code>
+            </div>
+        </li>
+        <li data-uberpanel="FinalWords" data-title="Final Words" data-default-width="400"  data-fix-height>
+            <div class="contentBox" >
+                <p>
+                    Visit the <a target="_blank" href="https://github.com/lachsen/uberpanel.js">GitHub Project Page</a>.
+                    Feedback, bug reports and suggestions are always welcome!
+                </p>
+                <p>
+                    Have fun with Uberpanels!
+                </p>
+            </div>
         </li>
     </ul>
 </div>
