@@ -1,4 +1,4 @@
-uberpanels.js
+uberpanel.js
 ==============
 
 Fancy panels for HTML based editors.
